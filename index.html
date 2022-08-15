@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <script>
+      let testx = false;
+      let x = "";
+      let o = "";
+      let move = 0;
+      const winner = ["123", "456", "789", "159", "357", "369", "258", "147"];
+      function startthegame(a) {
+        
+        if (event.target.innerText == "") {
+          if (testx == true) {
+            event.target.innerText = "x";
+            x += a.toString();
+            move += 1;
+            if (move >= 5) {
+              checkwinner();
+            }
+            testx = false;
+          } else {
+            event.target.innerText = "o";
+            o += a.toString();
+            move += 1;
+            if (move >= 5) {
+              checkwinner();
+            }
+            testx = true;
+          }
+        }
+      }
+      function checkwinner() {
+        for (let i = 0; i < winner.length; i++) {
+          winnerpositions = winner[i].split("");
+          let threepointstowin = 0;
+          if (testx == true) {
+            for (let z = 0; z < winnerpositions.length; z++) {
+              if (x.includes(winnerpositions[z])) {
+                threepointstowin += 1;
+                if (threepointstowin == 3) {
+                  alert("Player X is winner!!!");
+                }
+              }
+            }
+          } else {
+            for (let z = 0; z < winnerpositions.length; z++) {
+              if (o.includes(winnerpositions[z])) {
+                threepointstowin += 1;
+                if (threepointstowin == 3) {
+                  alert("Player o is winner!");
+                }
+              }
+            }
+          }
+        }
+        move == 9;
+      }
+
+      function resetbutton () {
+  location.reload();
+  document.getElementById("button").value = "";
+
+}
+    </script>
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="mainm">
+      <h1>איקס עיגול</h1>
+
+      <!-- Game Instructions -->
+      <p id="ins">
+        The game starts when you press a button<br /><br />  First Player starts
+        as <p id="Xplayer"><b>Player X</b></p>And Second Player as <p id="Oplayer"><b>Player O</b></p>
+      </p>
+
+      <br /><br />
+      <!-- 3x3 boxes for the game -->
+      <div class="main">
+        <div class="button" onclick="startthegame(1)"></div>
+        <div class="button" onclick="startthegame(2)"></div>
+        <div class="button" onclick="startthegame(3)"></div>
+        <div class="button" onclick="startthegame(4)"></div>
+        <div class="button" onclick="startthegame(5)"></div>
+        <div class="button" onclick="startthegame(6)"></div>
+        <div class="button" onclick="startthegame(7)"></div>
+        <div class="button" onclick="startthegame(8)"></div>
+        <div class="button" onclick="startthegame(9)"></div>
+  
+
+    <button id="but" onclick="resetbutton()">
+      RESET
+  </button>
+</div>
+      <br /><br /><br />
+
+   
+  </body>
+</html>

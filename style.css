@@ -1,0 +1,65 @@
+h1 {
+	color: rgb(0, 149, 255);
+	font-size: 45px;
+}
+
+.main {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	margin: auto;
+	width: 500px;
+	height: 300px;
+
+}
+
+#print {
+	font-family: Verdana,
+		Tahoma, sans-serif;
+
+	color: rgb(255, 0, 0);
+	font-size: 20px;
+}
+
+
+#but {
+	box-sizing: border-box;
+	width: 95px;
+	height: 40px;
+	border: 1px solid rgb(255, 234, 0);
+	margin: auto;
+	border-radius: 4px;
+	font-family: Verdana,
+		Tahoma, sans-serif;
+
+	background-color: rgb(255, 238, 0);
+	color: rgb(255, 0, 0);
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#mainm {
+	text-align: center;
+}
+
+
+.button {
+	width: 230px;
+	height: 200px;
+	margin: auto;
+	border: 1px solid rgb(255, 0, 0);
+	border-radius: 6px;
+	font-size: 180px;
+	text-align: center;
+	margin: 0;
+}
+
+#Xplayer {
+
+	color: red;
+}
+
+
+#Oplayer {
+
+	color: Green;
+}
